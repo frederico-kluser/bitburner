@@ -1,0 +1,4 @@
+purchaseServer("private-server-1024GB-NUMBER", 1024);
+
+scp("hack.script", "private-server-1024GB-NUMBER");
+exec("hack.script", "private-server-1024GB-NUMBER", 426);

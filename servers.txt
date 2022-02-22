@@ -1,0 +1,17 @@
+private-server-1024GB-1  24.7.8.0 Y
+private-server-1024GB-2  49.5.3.6 Y
+private-server-1024GB-3  40.3.5.5 Y
+private-server-1024GB-4  56.8.2.7 Y
+private-server-1024GB-5  63.1.7.5 Y
+private-server-1024GB-6  70.7.0.6 Y
+private-server-1024GB-7  24.3.8.3 Y
+private-server-1024GB-8  47.9.2.1 Y
+private-server-1024GB-81 5.7.1.1  Y
+private-server-1024GB-82 40.9.5.0 Y
+private-server-1024GB-83 99.4.1.3 Y
+
+
+purchaseServer("private-server-1024GB-NUMBER", 1024);
+
+scp("hack.script", "private-server-1024GB-NUMBER");
+exec("hack.script", "private-server-1024GB-NUMBER", 426);

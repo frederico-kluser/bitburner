@@ -1,0 +1,33 @@
+var privateServers = [				// silver-helix
+	"private-server-1024GB-1",  // omega-net
+	"private-server-1024GB-2",  // omega-net
+	"private-server-1024GB-3",  // omega-net
+	"private-server-1024GB-4",  // omega-net
+	"private-server-1024GB-5",  // omega-net
+	"private-server-1024GB-6",  // omega-net
+	"private-server-1024GB-7",  // omega-net
+	// "private-server-65TB-1",
+	// "private-server-65TB-2",
+	// "private-server-65TB-3",
+	// "private-server-65TB-4",
+	// "private-server-65TB-5",
+	// "private-server-65TB-6",
+	// "private-server-65TB-7",
+	// "private-server-65TB-8",
+	// "private-server-65TB-9",
+	// "private-server-65TB-10",
+	// "private-server-65TB-11",
+	// "private-server-65TB-12",
+	// "private-server-65TB-13",
+	// "private-server-65TB-14",
+	// "private-server-65TB-15",
+	// "private-server-65TB-16",
+	// "private-server-65TB-17",
+	// "private-server-65TB-18",
+];
+
+for (var index = 0; index < privateServers.length; index++) {
+	var host = privateServers[index];
+	scp("hack.script", host);
+	exec("hack.script", host, 426);
+}

@@ -1,0 +1,16 @@
+function formatMoney(money) {
+  var formatedMoney = '$';
+  var b = 1000000000;
+  var m = 1000000;
+  var k = 1000;
+
+  if (money >= b) {
+    formatedMoney += (money / b).toFixed(3) + 'b';
+  } else if (money >= m) {
+    formatedMoney += (money / m).toFixed(3) + 'm';
+  } else if (money >= k) {
+    formatedMoney += (money / k).toFixed(3) + 'k';
+  }
+
+  return formatedMoney;
+}

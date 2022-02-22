@@ -1,0 +1,48 @@
+var fixedHosts = [];
+
+var hacks = [
+  function(host) { brutessh(host) },
+  function(host) { ftpcrack(host) },
+  function(host) { httpworm(host) },
+  function(host) { relaysmtp(host) },
+  function(host) { sqlinject(host) },
+];
+
+function unlockPorts(host) {
+  for (var index = 0; index < hacks.length; index++) {
+    hacks[index](host);
+  }
+  nuke(host);
+  print('new host unlock: ' + host);
+  print('----------------------------');
+}
+
+function getHosts(mainHost) {
+  print('get server clove from : ' + mainHost)
+  print('----------------------------');
+  fixedHosts.push(mainHost);
+  var hosts = scan(mainHost);
+  var index = 0;
+
+  for (var index = 0; index < hosts.length; index++) {
+    var host = hosts[index];
+
+    if (!fixedHosts.includes(host)) {
+      fixedHosts.push(host);
+
+      if (!hasRootAccess(host) && getServerNumPortsRequired(host) <= hacks.length) {
+        unlockPorts(host);
+      }
+
+      getHosts(host);
+    }
+  }
+}
+
+getHosts('home');
+print('----------------------------')
+print('fixedHosts')
+print(fixedHosts)
+
+
+while (true) {}

@@ -1,0 +1,48 @@
+function formatMoney(money) {
+	var b = 1000000000;
+	var m = 1000000;
+	var k = 1000;
+	var result = '$';
+
+	if (money / b >= 1) {
+		result += (money / b).toFixed(2) + 'b';
+	} else if (money / m >= 1) {
+		result += (money / m).toFixed(2) + 'm';
+	} else if (money / k >= 1) {
+		result += (money / k).toFixed(2) + 'k';
+	}
+
+	return result;
+}
+
+print('8   -> ' + formatMoney(getPurchasedServerCost(8)));
+print('16  -> ' + formatMoney(getPurchasedServerCost(16)));
+print('32  -> ' + formatMoney(getPurchasedServerCost(32)));
+print('64  -> ' + formatMoney(getPurchasedServerCost(64)));
+print('128 -> ' + formatMoney(getPurchasedServerCost(128)));
+print('256 -> ' + formatMoney(getPurchasedServerCost(256)));
+print('512 -> ' + formatMoney(getPurchasedServerCost(512)));
+print('1024 -> ' + formatMoney(getPurchasedServerCost(1024)));
+print('2048 -> ' + formatMoney(getPurchasedServerCost(2048)));
+print('4096 -> ' + formatMoney(getPurchasedServerCost(4096)));
+print('8192 -> ' + formatMoney(getPurchasedServerCost(8192)));
+print('16384 -> ' + formatMoney(getPurchasedServerCost(16384)));
+print('32768 -> ' + formatMoney(getPurchasedServerCost(32768)));
+print('65536 -> ' + formatMoney(getPurchasedServerCost(65536)));
+
+8     -> $440.00k
+16    -> $880.00k
+32    -> $1.76m
+64    -> $3.52m
+128   -> $7.04m
+256   -> $14.08m
+512   -> $28.16m
+1024  -> $56.32m
+2048  -> $112.64m
+4096  -> $225.28m
+8192  -> $450.56m
+16384 -> $901.12m
+32768 -> $1.80b
+65536 -> $3.60b
+
+while (true) {}
